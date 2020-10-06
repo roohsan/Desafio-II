@@ -3,7 +3,7 @@ import './App.css';
 
 
 const Contador = (props) => (
-    <h1 class="my-title">{props.hora}:{props.minutos}:{props.segundos}</h1>
+    <h1 class="my-title">{props.hora}:{props.minutos}:{props.segundos}:{props.centesimo}</h1>
 )
 
 export default Contador

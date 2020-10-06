@@ -11,24 +11,31 @@ class App extends React.Component {
       hora: 0,
       segundos: 0,
       minutos: 0,
+      centesimo: 0,
       stop: false,
       nameStop: "Stop",
       name: "Relógio", 
       parcial: ""
     };
   }
+
+  // atribuição do valores ao zerar cronometro
    zerarCronometro() {
       this.state.hora = 0
       this.state.segundos = -1
       this.state.minutos = 0
+      this.state.centesimo = 0
       this.state.parcial = ""
    }
   
+   // volta parcial
   parcial(){
     let p = this.state.minutos+ ":"+ this.state.segundos + "\n\n"
     this.state.parcial = this.state.parcial + p
   }
   
+
+  //parada e inicio
   pararTempo(){
     this.setState({ 
         stop: !this.state.stop 
@@ -39,6 +46,8 @@ class App extends React.Component {
       this.state.nameStop = "Start"
   }
 
+
+  // incrementacao
   incrementar () {
     if (this.state.stop === false){
       this.setState(
@@ -55,14 +64,10 @@ class App extends React.Component {
   incrementarMinuto (state) {
     this.setState(() => { 
       return {minutos: state.minutos +1}
+ 
     })
   };
 
-    incrementarHora (state) {
-    this.setState(() => { 
-      return {hora: state.hora +1}
-    })
-  };
   
   zerar () {
     this.setState({ 
@@ -83,7 +88,7 @@ class App extends React.Component {
     return (
       <div>
         
-        <Contador hora={this.state.hora} minutos={this.state.minutos} segundos={this.state.segundos} />
+        <Contador hora={this.state.hora} minutos={this.state.minutos} segundos={this.state.segundos} centesimo={this.state.centesimo} />
         <LabelRelogio name={this.state.name} />
         <Botao onClick={() => this.zerarCronometro()} label={"Zerar"} />
         <Botao onClick={() => this.pararTempo()} label={this.state.nameStop} />
