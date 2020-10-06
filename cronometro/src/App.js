@@ -57,6 +57,12 @@ class App extends React.Component {
       return {minutos: state.minutos +1}
     })
   };
+
+    incrementarMinuto (state) {
+    this.setState(() => { 
+      return {hora: state.hora +1}
+    })
+  };
   
   zerar () {
     this.setState({ 
