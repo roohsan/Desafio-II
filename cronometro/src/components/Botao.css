@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap');
+
+.btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+  font-family: 'Quantico', sans-serif;
+  outline: none;
+}
+
+.start {
+  background-color: #20bf6b;
+  color: white;
+}
+
+.stop {
+  background-color: #eb3b5a;
+  color: white;
+}
+
+.parc {
+  background-color: #fd9644;
+  color: white;
+}

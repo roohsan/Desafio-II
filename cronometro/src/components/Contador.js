@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Botao from './Botao';
 import LabelTitle from './LabelTitle';
+import './Relogio.css';
+import './Contador.css';
 
 class Contador extends Component {
   constructor(props) {
@@ -81,25 +83,44 @@ class Contador extends Component {
           : 60 - (anterior.segundos - segundos),
     };
     parciais.push(novaParcial);
-    stringParciais += `${novaParcial.minutos}:${novaParcial.segundos} | ${novaParcial.difMinutos}:${novaParcial.difSegundos} -- `;
+    stringParciais += `${novaParcial.minutos}:${novaParcial.segundos} - ${novaParcial.difMinutos}:${novaParcial.difSegundos} | `;
     this.setState({ parcial: parciais, stringParciais });
   }
 
   render() {
     return (
       <div>
-        <h1>
-          {this.state.minutos}:{this.state.segundos}
-        </h1>
-        <Botao func={() => this.iniciarCronometro()} name="Iniciar" />
-        <Botao
-          func={() => this.pararCronometro()}
-          name={this.state.nameButton}
-        />
-        <Botao func={() => this.zerarCronometro()} name="Zerar" />
-        <Botao func={() => this.updateParcial()} name="Parcial" />
-        <LabelTitle name="Parciais" />
-        <h2>{this.state.stringParciais}</h2>
+        <div className="principal-clock">
+          <span className="principal-time">
+            {this.state.minutos}:{this.state.segundos}
+          </span>
+        </div>
+        <div className="cronometro-btns">
+          <Botao
+            estilo="btn start"
+            func={() => this.iniciarCronometro()}
+            name="Iniciar"
+          />
+          <Botao
+            estilo="btn"
+            func={() => this.pararCronometro()}
+            name={this.state.nameButton}
+          />
+          <Botao
+            estilo="btn stop"
+            func={() => this.zerarCronometro()}
+            name="Zerar"
+          />
+          <Botao
+            estilo="btn parc"
+            func={() => this.updateParcial()}
+            name="Parcial"
+          />
+        </div>
+        <div>
+          <LabelTitle name="Parciais" />
+          <span id="parcial">{this.state.stringParciais}</span>
+        </div>
       </div>
     );
   }
