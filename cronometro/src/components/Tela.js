@@ -8,8 +8,8 @@ import './Tela.css';
 
 class Tela extends Component {
   componentDidMount() {
-    document.getElementById('clock').style.display = 'none';
-    document.getElementById('timer').style.display = 'flex';
+    document.getElementById('clock').style.display = 'flex';
+    document.getElementById('timer').style.display = 'none';
     document.getElementById('stopwatch').style.display = 'none';
   }
 
