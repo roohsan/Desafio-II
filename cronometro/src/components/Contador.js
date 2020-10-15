@@ -21,12 +21,14 @@ class Contador extends Component {
 
   incrementar() {
     this.setState((state) => {
-      if (state.segundos >= 59) {
-        this.zerar();
-        this.incrementarMinutos();
+      if (state.paused === false) {
+        if (state.segundos >= 59) {
+          this.zerar();
+          this.incrementarMinutos();
+        }
+        //prettier-ignore
+        return ({ segundos: state.segundos + 1 });
       }
-      //prettier-ignore
-      return ({ segundos: state.segundos + 1 });
     });
   }
 
@@ -58,6 +60,7 @@ class Contador extends Component {
       this.setState({ nameButton: 'Play' });
     } else {
       this.setState({ nameButton: 'Pause' });
+      this.setState({ paused: false });
       this.timer = setInterval(() => this.incrementar(), 1000);
     }
   }

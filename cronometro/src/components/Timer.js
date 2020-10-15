@@ -9,7 +9,10 @@ class Timer extends Component {
     this.state = {
       minutos: 0,
       segundos: 0,
+      running: false,
     };
+
+    this.startTimer = this.startTimer.bind(this);
   }
 
   decrementar() {
@@ -34,12 +37,16 @@ class Timer extends Component {
   }
 
   informarTermino() {
+    this.setState({ running: false });
     clearInterval(this.timer);
     window.alert('O timer terminou!');
   }
 
   startTimer() {
-    this.timer = setInterval(() => this.decrementar(), 1000);
+    if (this.state.running === false) {
+      this.setState({ running: true });
+      this.timer = setInterval(() => this.decrementar(), 1000);
+    }
   }
 
   render() {
