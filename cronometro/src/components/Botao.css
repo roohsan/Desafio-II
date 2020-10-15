@@ -11,16 +11,16 @@
 }
 
 .start {
-  background-color: #20bf6b;
-  color: white;
+  background-color: #2adcdd;
+  color: #080f3f;
 }
 
-.stop {
-  background-color: #eb3b5a;
-  color: white;
+.other {
+  background-color: white;
+  color: #080f3f;
 }
 
-.parc {
-  background-color: #fd9644;
-  color: white;
+.menu {
+  background-color: #152155;
+  color: #2adcdd;
 }

@@ -1,0 +1,28 @@
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 360px;
+  height: 680px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: #080f3f;
+}
+
+.element {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.buttons {
+  width: 60%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

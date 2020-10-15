@@ -102,22 +102,22 @@ class Contador extends Component {
             name="Iniciar"
           />
           <Botao
-            estilo="btn"
+            estilo="btn other"
             func={() => this.pararCronometro()}
             name={this.state.nameButton}
           />
           <Botao
-            estilo="btn stop"
+            estilo="btn other"
             func={() => this.zerarCronometro()}
             name="Zerar"
           />
           <Botao
-            estilo="btn parc"
+            estilo="btn other"
             func={() => this.updateParcial()}
             name="Parcial"
           />
         </div>
-        <div>
+        <div id="container-parc">
           <LabelTitle name="Parciais" />
           <span id="parcial">{this.state.stringParciais}</span>
         </div>
